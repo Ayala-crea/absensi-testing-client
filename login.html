@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./src/css/login/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div id="formWrapper">
+        <div id="form">
+            <div class="logo">
+                <h1>LOGIN</h1>
+            </div>
+            <form id="formLogin">
+                <div class="form-item">
+                    <p class="formLabel"></p>
+                    <input type="text" name="username" id="username" class="form-style" placeholder="Username" required />
+                </div>
+                <div class="form-item">
+                    <p class="formLabel"></p>
+                    <input type="password" name="password" id="password" class="form-style" placeholder="Password" required />
+                    <!-- <div class="pw-view"><i class="fa fa-eye"></i></div> -->
+                    <p><a href="#"><small>Forgot Password?</small></a></p>
+                </div>
+                <div class="form-item">
+                    <p class="pull-left"><a href="./register.html"><small>Register</small></a></p>
+                    <input type="submit" id="submit-data" class="login pull-right" value="Log In">
+                    <div class="clear-fix"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="module" src="./src/js/login/script.js"></script> <!-- Pastikan path ini benar -->
+</body>
+
+</html>

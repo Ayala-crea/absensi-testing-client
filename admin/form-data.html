@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data List</title>
+    <link rel="stylesheet" href="./src/css/form-data/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Data Tables</h2>
+        <button class="add-button">+ Tambah Data</button>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Foto</th>
+                    <th>Nama</th>
+                    <th>TTL</th>
+                    <th>Alamat</th>
+                    <th>NPM</th>
+                    <th>Prodi</th>
+                    <th>Fakultas</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="https://via.placeholder.com/40" alt="Foto"></td>
+                    <td>Wicaksono Catur</td>
+                    <td>Solo, 11 Maret 1998</td>
+                    <td>Jl. Kencur No. 19, Sukoharjo</td>
+                    <td>55555</td>
+                    <td>Sistem Informasi Modern</td>
+                    <td>Teknik Informatika</td>
+                    <td>
+                        <button class="edit-button">Edit</button>
+                        <button class="delete-button">Delete</button>
+                    </td>
+                </tr>
+                <!-- Tambahkan data lain sesuai kebutuhan -->
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module">
+        import { checkAuthentication } from '../utils/AuthGuard.js';
+        checkAuthentication();
+    </script>
+</body>
+
+</html>

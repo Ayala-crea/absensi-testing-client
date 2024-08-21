@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">AbsensiApp</div>
+        <div class="welcome">Selamat Datang, <span id="user-name"></span></div>
+    </nav>
+
+    <div class="content">
+        <button class="absen-button"><a href="./form-data.html" style="text-decoration: none;">upload Data</a></button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AbsensiApp. Semua hak dilindungi.</p>
+    </footer>
+
+    <!-- Tombol Logout -->
+    <button class="logout-button">Logout</button>
+
+    <script type="module">
+        import { checkAuthentication } from '../utils/AuthGuard.js';
+        checkAuthentication();
+
+        const loadUserName = () => {
+            const userName = localStorage.getItem('nama');
+            if (userName) {
+                document.getElementById('user-name').textContent = userName;
+            } else {
+                console.error('No user name found in localStorage');
+            }
+        };
+
+        loadUserName();
+
+        // Fungsi untuk logout
+        const logout = () => {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('nama');
+            window.location.href = '../login.html'; // Arahkan kembali ke halaman login
+        };
+
+        // Event listener untuk tombol logout
+        document.querySelector('.logout-button').addEventListener('click', logout);
+    </script>
+</body>
+
+</html>
