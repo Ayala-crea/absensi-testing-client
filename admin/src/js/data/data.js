@@ -1,9 +1,9 @@
 import { getBearerJSON } from "../api.js";
-import { endpointGetAllData } from "../api.js";
+import { endpointGetDataByIdAdmin } from "../api.js";
 
 export const getAllData = async () => {
     try {
-        const response = await getBearerJSON(endpointGetAllData, {
+        const response = await getBearerJSON(endpointGetDataByIdAdmin, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('authToken')}`,
             },
