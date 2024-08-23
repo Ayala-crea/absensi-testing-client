@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absensi</title>
     <link rel="stylesheet" href="./src/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="./src/js/upload/script.js" defer></script>
 </head>
 
 <body>
@@ -15,7 +17,23 @@
     </nav>
 
     <div class="content">
-        <button class="absen-button"><a href="./form-data.html" style="text-decoration: none;">upload Data</a></button>
+        <button class="absen-button" id="uploadButton">Upload Data</button>
+    </div>
+
+    <!-- Overlay dan Form Upload -->
+    <div class="overlay" id="overlay" style="display: none;">
+        <div class="upload-container">
+            <form id="upload-form"> <!-- Pastikan ID ini ada -->
+                <input type="file" id="file-input" /> <!-- Pastikan ID ini ada -->
+                <label for="file-input">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M19.481 12.512l-1.999 4.608c-.102.232-.132.49-.085.738l.792 3.906c.041.205-.032.418-.19.561-.158.144-.384.187-.585.111l-4.073-1.487c-.233-.085-.487-.071-.714.039l-4.66 2.285c-.676.331-1.406-.325-1.164-1.056l2.088-6.292c.038-.115.057-.236.057-.357v-7.351l-2.418-2.418c-.544-.544-.544-1.428 0-1.973l2.44-2.44c.271-.272.633-.423 1.015-.423h7.349c.494 0 .963.201 1.315.556l2.408 2.408c.359.358.558.837.558 1.329v6.113c.001.651-.245 1.291-.693 1.757zm-12.529 9.488c-.067.204-.226.369-.426.426-.066.02-.133.03-.2.03-.372 0-.684-.307-.684-.682 0-.068.01-.136.03-.202l2.024-6.098h-3.859c-.555 0-1.008-.453-1.008-1.008v-12.64c0-.555.453-1.008 1.008-1.008h8.662c.555 0 1.008.453 1.008 1.008v12.64c0 .555-.453 1.008-1.008 1.008h-3.852l-2.024 6.098zm7.048-14h-6v2h6v-2zm0 4h-6v2h6v-2zm0-8h-6v2h6v-2z" />
+                    </svg>
+                    <span class="file-name">Pilih file...</span>
+                </label>
+                <button class="upload-button" type="submit">Upload</button>
+            </form>
+        </div>
     </div>
 
     <footer>
@@ -49,6 +67,39 @@
 
         // Event listener untuk tombol logout
         document.querySelector('.logout-button').addEventListener('click', logout);
+
+        // Event listener untuk tombol upload
+        document.getElementById('uploadButton').addEventListener('click', () => {
+            document.getElementById('overlay').style.display = 'flex';
+        });
+
+        // Update nama file saat file dipilih
+        document.getElementById('file-input').addEventListener('change', function () {
+            const fileName = this.files[0] ? this.files[0].name : 'Pilih file...';
+            document.querySelector('.file-name').textContent = fileName;
+        });
+
+        // Event listener untuk submit upload
+        document.getElementById('upload-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const fileInput = document.getElementById('file-input');
+            const file = fileInput.files[0];
+
+            if (file) {
+                alert(`File ${file.name} siap diupload!`);
+                // Tambahkan logika untuk mengupload file di sini
+                document.getElementById('overlay').style.display = 'none';
+            } else {
+                alert('Silakan pilih file terlebih dahulu!');
+            }
+        });
+
+        // Close overlay when clicking outside the upload form
+        document.getElementById('overlay').addEventListener('click', (e) => {
+            if (e.target.id === 'overlay') {
+                document.getElementById('overlay').style.display = 'none';
+            }
+        });
     </script>
 </body>
 
