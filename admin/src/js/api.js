@@ -15,3 +15,17 @@ export const postBearerJSON = async (url, { body, headers }) => {
     }
     return response;
 };
+
+export const getBearerJSON = async (url, { headers }) => {
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            ...headers,
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response;
+}

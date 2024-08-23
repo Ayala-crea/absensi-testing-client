@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             }).then(() => {
-                window.location.href = '../../../index.html';
+                window.location.href = 'form-data.html';
             });
         } catch (error) {
             console.error('Uploading failed:', error);
