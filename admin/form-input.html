@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./src/css/form-input/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/equip9_logo.png" alt="equip9_logo">
+        </div>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <h1 style="text-align: center;margin-top: 20px;">Add Financier Details</h1>
+    <form style="padding: 50px;" id="financeForm" action="action.php" method="post">
+        <div class="form-group">
+            <label for="finance_name">Finance Name:</label>
+            <input type="text" id="finance_name" name="finance_name" required pattern="[A-Za-z\s]+"
+                title="Only alphabets and spaces allowed">
+        </div>
+
+        <div class="form-group">
+            <label for="location">Finance Store Location:</label>
+            <select name="location" id="location" required>
+                <option value="">Select a Location</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="pune">Pune</option>
+                <option value="satara">Satara</option>
+                <option value="sangli">Sangli</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Website">Website:</label>
+            <input type="url" id="Website" name="Website" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"
+                title="Please enter a valid 10-digit phone number">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="region">Region:</label>
+            <input type="text" id="region" name="region">
+        </div>
+
+        <div class="form-group">
+            <label>Do you provide finance?</label>
+            <div class="radio-group">
+                <input type="radio" id="yes" name="finance" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="finance" value="no">
+                <label for="no">No</label>
+                <input type="radio" id="maybe" name="finance" value="maybe">
+                <label for="maybe">Maybe</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="certificate">Upload certificate:</label>
+            <input type="file" id="certificate" name="certificate" accept=".pdf,.doc,.docx" required>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Upload Photo:</label>
+            <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png">
+        </div>
+
+        <div class="form-group">
+            <label for="video">Upload Video:</label>
+            <input type="file" id="video" name="video" accept=".mp4, .mov, .avi">
+        </div>
+
+        <div class="form-group">
+            <label for="short-video">Upload Short Video:</label>
+            <input type="file" id="short-video" name="short-video" accept=".mp4, .mov, .avi">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Next</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

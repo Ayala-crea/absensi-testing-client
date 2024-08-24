@@ -1,6 +1,7 @@
 export const endpointUploadDataExcel = "http://127.0.0.1:8080/upload";
 export const endpointGetAllData = "http://127.0.0.1:8080/data";
 export const endpointGetDataByIdAdmin = "http://127.0.0.1:8080/data/mahasiswa";
+export const endpointCreateManual = "http://127.0.0.1:8080/data/input";
 
 export const postBearerJSON = async (url, { body, headers }) => {
     const response = await fetch(url, {
