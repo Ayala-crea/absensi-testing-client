@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             }).then(() => {
-                window.location.href = '../../../admin/admin.html';
+                window.location.href = '../../../admin/index.html';
             });
         } catch (error) {
             console.error('Login failed:', error);
