@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Uploading file...");
             const data = await uploadData(file);
             Swal.fire({
-                title: 'Success!',
-                text: 'File uploaded successfully.',
-                icon: 'success',
+                title: 'Are you sure?',
+                text: 'denied',
+                icon: 'question',
                 confirmButtonText: 'Ok'
             }).then(() => {
                 window.location.href = 'form-data.html';
